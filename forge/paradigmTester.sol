@@ -1,5 +1,5 @@
 // Description:
-// A forge testcase which you cam use to easily debug challenges that were built using the Paradigm CTF framework.
+// A forge testcase which you can use to easily debug challenges that were built using the Paradigm CTF framework.
 
 
 // SPDX-License-Identifier: MIT
@@ -14,6 +14,7 @@ contract ParadigmTest is Test {
     //Initialize any additional needed variables here
 
     function setUp() public {
+	    vm.deal(deployer, 1337 ether);
         vm.startPrank(deployer);
 
         //Copy all code from the Setup.sol constructor() function into here
@@ -22,7 +23,8 @@ contract ParadigmTest is Test {
     }
 
     function test() public {
-        vm.deal(attacker, 30 ether); //30 eth are the standard for the paradigm framework, but could be configured differently
+        //30 eth are the standard for the paradigm framework, but this could be configured differently, you can easily check thisby importing the rpc url and private key into metamask and checking the balance of the deployer account
+        vm.deal(attacker, 30 ether); 
 
         //Code your solution here
 
@@ -31,7 +33,7 @@ contract ParadigmTest is Test {
         assertEq(isSolved(), true);
     }
 
-    function isSolved() external view returns (bool) {
+    function isSolved() public view returns (bool) {
         //Copy the content of the isSolved() function from the Setup.sol contract here
         return false;
     }
