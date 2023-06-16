@@ -6,7 +6,6 @@ const PROOF_INDEX = '<PROOF__INDEX>'; // Replace with the index of the address t
 const {MerkleTree} = require("merkletreejs")
 const keccak256 = require("keccak256")
 
-
 //Enter your addresses here
 // Example: let addresses = ["0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf", "0x2B5AD5c4795c026514f8317c7a215E218DcCD6cF"]
 let addresses = []
