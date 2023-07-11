@@ -23,10 +23,11 @@ contract ParadigmTest is Test {
     }
 
     function test() public {
-        //30 eth are the standard for the paradigm framework, but this could be configured differently, you can easily check thisby importing the rpc url and private key into metamask and checking the balance of the deployer account
+        //30 eth are the standard for the paradigm framework, but this could be configured differently, you can easily check this by importing the rpc url and private key into metamask and checking the balance of the deployer account
         vm.deal(attacker, 30 ether); 
 
         //Code your solution here
+        vm.startPrank(attacker);
 
         vm.stopPrank();
         
